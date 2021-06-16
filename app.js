@@ -1,7 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
 require('./db/connect.js');
-
 const helmet = require('helmet');
 const path = require('path');
 const routes = require('./routes');

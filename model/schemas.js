@@ -7,4 +7,3 @@ const dog = new Schema({
 const Dog = model('dog', dog);
 
 module.exports = { Dog };
-

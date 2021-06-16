@@ -1,13 +1,12 @@
-const fs = require('fs');
 require('./db/connect');
 require('colors');
 const { Dog } = require('./model/schemas.js');
-
-const allDogs = JSON.parse(fs.readFileSync('./dogs.json', 'utf8'));
+const allDogs = require('./dogs.json');
 
 (async () => {
   try {
-    await Dog.insertMany(allDogs);
+    const dog = Dog.create(allDogs);
+    await Promise.all([dog]);
     console.log('Data loaded');
   } catch (error) {
     console.error(`Error => ${error.message.red}`);
