@@ -1,12 +1,13 @@
 const express = require('express');
 const morgan = require('morgan');
+require('./db/connect.js');
+
 const helmet = require('helmet');
 const path = require('path');
 const routes = require('./routes');
 require('colors');
 const { notFound, errorHandler } = require('./middleware/errorHandler');
 require('dotenv').config();
-
 const app = express();
 
 app.use(morgan('dev'));

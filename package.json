@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
+    "load": "node loadData.js",
     "lint": "eslint . --ext .js"
   },
   "author": "RB",
